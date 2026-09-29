@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EduGenie – Learn anything. Understand everything.</title>
+<meta name="description" content="EduGenie is a Gemini-powered learning assistant.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧞</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<header class="nav">
+  <a class="brand" href="/"><span class="logo">E</span>EduGenie</a>
+  <span class="badge"><i class="dot" id="statusDot"></i>Powered by Gemini</span>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Learn anything.<br>Understand everything.</h1>
+    <p>Ask questions, break down concepts, test yourself, plan your studies and condense long reading — all in one place.</p>
+  </section>
+
+  <section class="cards" id="cards" role="tablist" aria-label="Features"></section>
+
+  <section class="panel" id="panel">
+    <div class="panel-head">
+      <h2 id="panelTitle"></h2>
+      <p id="panelDesc"></p>
+    </div>
+    <form id="form" novalidate>
+      <div id="fields"></div>
+      <div class="examples">
+        <span class="lbl">Try an example</span>
+        <div id="examples" class="chips"></div>
+      </div>
+      <button type="submit" class="btn" id="submitBtn"><span class="btn-text">Generate</span><span class="spinner" aria-hidden="true"></span></button>
+    </form>
+  </section>
+
+  <section class="result" id="result" hidden aria-live="polite">
+    <div class="result-head">
+      <span class="result-title" id="resultTitle">Response</span>
+      <button class="copy" id="copyBtn" type="button">Copy</button>
+    </div>
+    <div id="loading" class="skeleton" hidden><i></i><i></i><i></i><i></i></div>
+    <div id="error" class="error" hidden></div>
+    <div id="output" class="md"></div>
+  </section>
+</main>
+
+<footer class="foot">EduGenie · Built with FastAPI and Google Gemini</footer>
+<script src="script.js"></script>
+</body>
+</html>
